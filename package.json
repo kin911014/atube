@@ -1,0 +1,14 @@
+{
+  "name": "atube",
+  "version": "1.0.0",
+  "description": "Cloning youtube with VanillaJS and nodeJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "KIM DONG-EUN",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
