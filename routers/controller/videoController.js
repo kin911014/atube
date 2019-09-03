@@ -1,7 +1,19 @@
-export const searchCtr = (req, res) => res.send("search");
-export const homeCtr = (req, res) => res.render("home");
-export const videosCtr = (req, res) => res.send("videos");
-export const uploadCtr = (req, res) => res.send("upload");
-export const videoDetailCtr = (req, res) => res.send("videoDetail");
-export const editVideoCtr = (req, res) => res.send("editVideo");
-export const deleteVideoCtr = (req, res) => res.send("deleteVideo");
+export const searchCtr = (req, res) =>
+  res.render("search", { pageTitle: "Search" });
+
+export const homeCtr = (req, res) => res.render("home", { pageTitle: "Home" });
+
+export const videosCtr = (req, res) =>
+  res.render("videos", { pageTitle: "Home" });
+
+export const uploadCtr = (req, res) =>
+  res.render("upload", { pageTitle: "Home" });
+
+export const videoDetailCtr = (req, res) =>
+  res.render("videoDetail", { pageTitle: "Home" });
+
+export const editVideoCtr = (req, res) =>
+  res.render("editVideo", { pageTitle: "Home" });
+
+export const deleteVideoCtr = (req, res) =>
+  res.render("deleteVideo", { pageTitle: "Home" });
