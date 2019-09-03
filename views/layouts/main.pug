@@ -1,11 +1,10 @@
 doctype html
 html
     head
-        title   | Atube
+        <script src="https://kit.fontawesome.com/0da8b6c30a.js"></script>
+        title   | #{siteName}
     body
-        header
-            h1 Atube
+        include ../partials/header
         main
             block content
-        footer
-            span &copy; Youtube
+        include ../partials/footer
