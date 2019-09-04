@@ -1,11 +1,14 @@
+import { videos } from "../db";
+
+export const homeCtr = (req, res) =>
+  res.render("home", { pageTitle: "Home", videos });
+
 export const searchCtr = (req, res) => {
   const {
     query: { term: searchingFor }
   } = req;
   res.render("search", { pageTitle: "Search", searchingFor });
 };
-
-export const homeCtr = (req, res) => res.render("home", { pageTitle: "Home" });
 
 export const videosCtr = (req, res) =>
   res.render("videos", { pageTitle: "Videos" });

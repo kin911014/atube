@@ -1,11 +1,10 @@
 import express from "express";
 import routes from "../routes";
 import {
-  usersCtr,
-  userDetailCtr,
   editProfileCtr,
-  changePasswordCtr
-} from "./controller/userController";
+  changePasswordCtr,
+  userDetailCtr
+} from "../controller/userController";
 
 const userRouter = express.Router();
 
