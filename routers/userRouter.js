@@ -10,6 +10,6 @@ const userRouter = express.Router();
 
 userRouter.get(routes.editProfile, editProfileCtr);
 userRouter.get(routes.changePassword, changePasswordCtr);
-userRouter.get(routes.userDetail, userDetailCtr);
+userRouter.get(routes.userDetail(), userDetailCtr);
 
 export default userRouter;

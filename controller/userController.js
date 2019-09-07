@@ -18,8 +18,12 @@ export const postJoinCtr = (req, res) => {
   }
 };
 
-export const loginCtr = (req, res) =>
+export const getLoginCtr = (req, res) =>
   res.render("login", { pageTitle: "Login" });
+
+export const postLoginCtr = (req, res) => {
+  res.redirect(routes.home);
+};
 
 export const logoutCtr = (req, res) =>
   res.render("logout", { pageTitle: "Logout" });
