@@ -7,7 +7,7 @@ export const searchCtr = (req, res) => {
   const {
     query: { term: searchingFor }
   } = req;
-  res.render("search", { pageTitle: "Search", searchingFor });
+  res.render("search", { pageTitle: "Search", searchingFor, videos });
 };
 
 export const videosCtr = (req, res) =>
