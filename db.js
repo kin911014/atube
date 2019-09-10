@@ -1,41 +1,16 @@
-export const videos = [
-  {
-    id: 111111,
-    title: "Inception",
-    description: "Reonardo",
-    views: 24,
-    videofile: "http://media.w3.org/2010/05/sintel/trailer.mp4",
-    // 출처: https://unikys.tistory.com/278 [All-round programmer]"
-    creator: {
-      id: 222222,
-      name: "Mr Kim",
-      email: "kim@daum.net"
-    }
-  },
-  {
-    id: 122222,
-    title: "Titanic",
-    description: "Reonardo",
-    views: 24,
-    videofile: "http://media.w3.org/2010/05/sintel/trailer.mp4",
-    // 출처: https://unikys.tistory.com/278 [All-round programmer]"
-    creator: {
-      id: 222222,
-      name: "Mr Kim",
-      email: "kim@daum.net"
-    }
-  },
-  {
-    id: 133333,
-    title: "Amagetdon",
-    description: "broose willece",
-    views: 24,
-    videofile: "http://media.w3.org/2010/05/sintel/trailer.mp4",
-    // 출처: https://unikys.tistory.com/278 [All-round programmer]"
-    creator: {
-      id: 222222,
-      name: "Mr Kim",
-      email: "kim@daum.net"
-    }
-  }
-];
+import mongoose from "mongoose";
+
+mongoose.connect("mongodb://localhost:27017/atube", {
+  useNewUrlParser: true,
+  useFindAndModify: false,
+  useUnifiedTopology: true
+});
+
+const db = mongoose.connection;
+
+const handleOpen = () => console.log("✅  Connected to DB");
+
+const handleError = error => console.log(`❌  Error on DB Connection ${error}`);
+
+db.once("open", handleOpen);
+db.on("error", handleError);
