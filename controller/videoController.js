@@ -22,10 +22,10 @@ export const getUploadCtr = (req, res) =>
   res.render("upload", { pageTitle: "Upload" });
 
 export const postUploadCtr = (req, res) => {
-  const {
-    body: { videoFile, title, description }
-  } = req;
-  res.redirect(routes.videoDetail(122222));
+  const { body, file } = req;
+  console.log(body, file);
+  res.render("upload", { pageTitle: "Upload" });
+  // res.redirect(routes.videoDetail(122222));
 };
 
 export const videoDetailCtr = (req, res) =>
