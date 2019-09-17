@@ -3,7 +3,7 @@ import Video from "../models/Video";
 
 export const homeCtr = async (req, res) => {
   try {
-    const videos = await Video.find({});
+    const videos = await Video.find({}).sort({ _id: -1 });
     res.render("home", { pageTitle: "Home", videos });
   } catch (error) {
     console.log(error);
@@ -80,7 +80,6 @@ export const deleteVideoCtr = async (req, res) => {
   } = req;
   try {
     await Video.findOneAndRemove({ _id: id });
-    res.render("deleteVideo", { pageTitle: "Delete Video" });
   } catch (error) {}
   res.redirect(routes.home);
 };
