@@ -11,10 +11,18 @@ export const homeCtr = async (req, res) => {
   }
 };
 
-export const searchCtr = (req, res) => {
+export const searchCtr = async (req, res) => {
   const {
     query: { term: searchingFor }
   } = req;
+  let videos = [];
+  try {
+    videos = await Video.find({
+      title: { $regex: searchingFor, $options: "i" }
+    });
+  } catch (error) {
+    console.log(error);
+  }
   res.render("search", { pageTitle: "Search", searchingFor, videos });
 };
 
