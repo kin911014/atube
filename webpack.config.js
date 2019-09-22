@@ -1,4 +1,5 @@
 const path = require("path");
+const autoprefixer = require("autoprefixer");
 const ExtractCSS = require("extract-text-webpack-plugin");
 
 const MODE = process.env.WEBPACK_ENV;
@@ -17,14 +18,23 @@ const config = {
         test: /\.(scss)$/,
         // scss를 찾는 문법
         use: ExtractCSS.extract([
+          // 순서4 ExtractCSS로 아래의 가져온 css부분을 추출!
           {
             loader: "css-loader"
+            // 순서3 css를 가져와준다
           },
           {
-            loader: "postcss-loader"
+            loader: "postcss-loader",
+            // 순서2 특정 plugin들을 css에 대해 실행시켜준다
+            options: {
+              plugin() {
+                return [autoprefixer({ browsers: "cover 99.5%" })];
+              }
+            }
           },
           {
             loader: "sass-loader"
+            // 순서1 sass를 css로 옮겨주는 역할
           }
         ])
       }
@@ -32,8 +42,9 @@ const config = {
   },
   output: {
     path: OUTPUT_DIR,
-    filename: "[name].[format]"
-  }
+    filename: "[name].js"
+  },
+  plugins: [new ExtractCSS("styles.css")]
 };
 
 module.exports = config;
