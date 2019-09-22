@@ -14,7 +14,8 @@ const app = express();
 app.use(helmet());
 app.set("view engine", "pug");
 app.use("/uploads", express.static("uploads"));
-//예제로 만듬 실제로 위와같이 사용x
+// 예제로 만듬 실제로 위와같이 사용x
+app.use("/static", express.static("static"));
 app.use(cookieParser());
 app.use(morgan("dev"));
 app.use(bodyParser.urlencoded({ extended: true }));

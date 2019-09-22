@@ -9,11 +9,19 @@ const ENTRY_FILE = path.resolve(__dirname, "assets", "js", "main.js");
 const OUTPUT_DIR = path.join(__dirname, "static");
 
 const config = {
-  entry: ENTRY_FILE,
+  entry: ["@babel/polyfill", ENTRY_FILE],
   mode: MODE,
   module: {
     // webpack에서는 위에서 아래가 아닌 아래에서 위의 순서로 실행!!
     rules: [
+      {
+        test: /\.(js)$/,
+        use: [
+          {
+            loader: "babel-loader"
+          }
+        ]
+      },
       {
         test: /\.(scss)$/,
         // scss를 찾는 문법
@@ -27,8 +35,8 @@ const config = {
             loader: "postcss-loader",
             // 순서2 특정 plugin들을 css에 대해 실행시켜준다
             options: {
-              plugin() {
-                return [autoprefixer({ browsers: "cover 99.5%" })];
+              plugins() {
+                return [autoprefixer({ Browserslist: "cover 99.5%" })];
               }
             }
           },
