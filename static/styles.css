@@ -156,9 +156,10 @@ main {
   background-color: #ea232c;
   margin-bottom: 50px; }
   .header .header__wrapper {
+    padding: 5px 0px;
     width: 100%;
     margin: 0 auto;
-    max-width: 1000px;
+    max-width: 1300px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     align-items: center; }
@@ -166,6 +167,38 @@ main {
       color: white;
       font-size: 40px; }
     .header .header__wrapper .header__column:nth-child(2) {
+      width: 100%;
       justify-self: center; }
     .header .header__wrapper .header__column:last-child {
       justify-self: end; }
+    .header .header__wrapper .header__column ul {
+      display: flex;
+      color: white;
+      font-weight: 700;
+      text-transform: uppercase; }
+      .header .header__wrapper .header__column ul li:not(:last-child) {
+        margin-right: 15px; }
+    .header .header__wrapper .header__column form {
+      width: 100%; }
+      .header .header__wrapper .header__column form input {
+        padding: 7px 10px;
+        width: 100%;
+        border-radius: 5px;
+        font-size: 16px;
+        color: #444444;
+        font-weight: 600; }
+        .header .header__wrapper .header__column form input::-webkit-input-placeholder {
+          font-weight: 300;
+          color: rgba(0, 0, 0, 0.5); }
+        .header .header__wrapper .header__column form input::-moz-placeholder {
+          font-weight: 300;
+          color: rgba(0, 0, 0, 0.5); }
+        .header .header__wrapper .header__column form input:-ms-input-placeholder {
+          font-weight: 300;
+          color: rgba(0, 0, 0, 0.5); }
+        .header .header__wrapper .header__column form input::-ms-input-placeholder {
+          font-weight: 300;
+          color: rgba(0, 0, 0, 0.5); }
+        .header .header__wrapper .header__column form input::placeholder {
+          font-weight: 300;
+          color: rgba(0, 0, 0, 0.5); }
