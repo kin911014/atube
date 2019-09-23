@@ -289,3 +289,6 @@ input {
   .social-login .social-login--github {
     background-color: #444444;
     color: white; }
+  .social-login .social-login--facebook {
+    background-color: #3a5998;
+    color: white; }
