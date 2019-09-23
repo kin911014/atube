@@ -18,7 +18,8 @@ main {
 }
 
 button,
-input {
+input,
+textarea {
   background-color: white;
   padding: 7px 10px;
   width: 100%;
@@ -28,6 +29,7 @@ input {
   color: $black;
   font-weight: 600;
   max-width: 320px;
+  resize: none;
   &::placeholder {
     font-weight: 300;
     color: rgba(0, 0, 0, 0.5);
@@ -41,6 +43,10 @@ video {
 
 button {
   background-color: #3498db;
-  color: white;
   border: none;
+  color: white;
+}
+
+button.delete {
+  background-color: $dark-red;
 }
