@@ -1,0 +1,17 @@
+.form-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  form {
+    width: 100%;
+    max-width: 320px;
+    input {
+      display: block;
+      width: 100%;
+      &:not(:last-child) {
+        margin-top: 25px;
+      }
+    }
+  }
+}
