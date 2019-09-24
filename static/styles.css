@@ -154,7 +154,8 @@ main {
 
 button,
 input,
-textarea {
+textarea,
+.fileUpload {
   background-color: white;
   padding: 7px 10px;
   width: 100%;
@@ -167,27 +168,32 @@ textarea {
   resize: none; }
   button::-webkit-input-placeholder,
   input::-webkit-input-placeholder,
-  textarea::-webkit-input-placeholder {
+  textarea::-webkit-input-placeholder,
+  .fileUpload::-webkit-input-placeholder {
     font-weight: 300;
     color: rgba(0, 0, 0, 0.5); }
   button::-moz-placeholder,
   input::-moz-placeholder,
-  textarea::-moz-placeholder {
+  textarea::-moz-placeholder,
+  .fileUpload::-moz-placeholder {
     font-weight: 300;
     color: rgba(0, 0, 0, 0.5); }
   button:-ms-input-placeholder,
   input:-ms-input-placeholder,
-  textarea:-ms-input-placeholder {
+  textarea:-ms-input-placeholder,
+  .fileUpload:-ms-input-placeholder {
     font-weight: 300;
     color: rgba(0, 0, 0, 0.5); }
   button::-ms-input-placeholder,
   input::-ms-input-placeholder,
-  textarea::-ms-input-placeholder {
+  textarea::-ms-input-placeholder,
+  .fileUpload::-ms-input-placeholder {
     font-weight: 300;
     color: rgba(0, 0, 0, 0.5); }
   button::placeholder,
   input::placeholder,
-  textarea::placeholder {
+  textarea::placeholder,
+  .fileUpload::placeholder {
     font-weight: 300;
     color: rgba(0, 0, 0, 0.5); }
 
@@ -202,6 +208,9 @@ button {
 
 button.delete {
   background-color: #bb2f2a; }
+
+.fileUpload {
+  background-color: red; }
 
 .header {
   background-color: #ea232c;
@@ -280,13 +289,13 @@ button.delete {
     width: 100%;
     max-width: 320px;
     margin-bottom: 50px; }
-    .form-container form input {
+    .form-container form input:not([type="file"]) {
       display: block;
       width: 100%;
       padding-top: 10px;
       padding-bottom: 10px;
       box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
-      .form-container form input:not(:last-child) {
+      .form-container form input:not([type="file"]):not(:last-child) {
         margin-bottom: 25px; }
     .form-container form textarea {
       box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
