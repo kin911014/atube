@@ -19,7 +19,8 @@ main {
 
 button,
 input,
-textarea {
+textarea,
+.fileUpload {
   background-color: white;
   padding: 7px 10px;
   width: 100%;
@@ -49,4 +50,8 @@ button {
 
 button.delete {
   background-color: $dark-red;
+}
+
+.fileUpload {
+  background-color: red;
 }
