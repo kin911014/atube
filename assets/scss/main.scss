@@ -18,7 +18,7 @@ main {
 }
 
 button,
-input,
+input:not([type="file"]),
 textarea,
 .fileUpload {
   background-color: white;
@@ -50,8 +50,4 @@ button {
 
 button.delete {
   background-color: $dark-red;
-}
-
-.fileUpload {
-  background-color: red;
 }

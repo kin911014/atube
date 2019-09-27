@@ -16,7 +16,7 @@ Cloning youtube with VanillaJS and nodeJS
 
 [v] EditVideo에서 이름 및 설명 수정 가능 구현
 
-[v] 검색기능 구현, 업로드된 video의 이름 일부만으로도 검색가능
+[v] 검색기능 구현, 업로드된 video의 title 일부만으로도 검색가능
 
 [v] webpack : scss를 활용
 

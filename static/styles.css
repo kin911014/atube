@@ -153,7 +153,7 @@ main {
   min-height: 70vh; }
 
 button,
-input,
+input:not([type="file"]),
 textarea,
 .fileUpload {
   background-color: white;
@@ -167,31 +167,31 @@ textarea,
   max-width: 320px;
   resize: none; }
   button::-webkit-input-placeholder,
-  input::-webkit-input-placeholder,
+  input:not([type="file"])::-webkit-input-placeholder,
   textarea::-webkit-input-placeholder,
   .fileUpload::-webkit-input-placeholder {
     font-weight: 300;
     color: rgba(0, 0, 0, 0.5); }
   button::-moz-placeholder,
-  input::-moz-placeholder,
+  input:not([type="file"])::-moz-placeholder,
   textarea::-moz-placeholder,
   .fileUpload::-moz-placeholder {
     font-weight: 300;
     color: rgba(0, 0, 0, 0.5); }
   button:-ms-input-placeholder,
-  input:-ms-input-placeholder,
+  input:not([type="file"]):-ms-input-placeholder,
   textarea:-ms-input-placeholder,
   .fileUpload:-ms-input-placeholder {
     font-weight: 300;
     color: rgba(0, 0, 0, 0.5); }
   button::-ms-input-placeholder,
-  input::-ms-input-placeholder,
+  input:not([type="file"])::-ms-input-placeholder,
   textarea::-ms-input-placeholder,
   .fileUpload::-ms-input-placeholder {
     font-weight: 300;
     color: rgba(0, 0, 0, 0.5); }
   button::placeholder,
-  input::placeholder,
+  input:not([type="file"])::placeholder,
   textarea::placeholder,
   .fileUpload::placeholder {
     font-weight: 300;
@@ -208,9 +208,6 @@ button {
 
 button.delete {
   background-color: #bb2f2a; }
-
-.fileUpload {
-  background-color: red; }
 
 .header {
   background-color: #ea232c;
@@ -289,13 +286,15 @@ button.delete {
     width: 100%;
     max-width: 320px;
     margin-bottom: 50px; }
-    .form-container form input:not([type="file"]) {
+    .form-container form input:not([type="file"]),
+    .form-container form .fileUpload {
       display: block;
       width: 100%;
       padding-top: 10px;
       padding-bottom: 10px;
       box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
-      .form-container form input:not([type="file"]):not(:last-child) {
+      .form-container form input:not([type="file"]):not(:last-child),
+      .form-container form .fileUpload:not(:last-child) {
         margin-bottom: 25px; }
     .form-container form textarea {
       box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
@@ -306,6 +305,8 @@ button.delete {
   .form-container a {
     max-width: 320px;
     width: 100%; }
+  .form-container .fileUpload label {
+    font-weight: 500; }
 
 .social-login {
   display: flex;
