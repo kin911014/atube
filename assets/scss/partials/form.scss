@@ -5,7 +5,7 @@
   align-items: center;
   form {
     width: 100%;
-    max-width: 320px;
+    max-width: 360px;
     margin-bottom: 50px;
     input:not([type="file"]),
     .fileUpload {
@@ -28,14 +28,13 @@
     }
   }
   a {
-    max-width: 320px;
+    max-width: 360px;
     width: 100%;
   }
   .fileUpload {
     label {
       font-weight: 500;
-
-      // margin-right: 10px;
+      margin-right: 15px;
     }
   }
 }
