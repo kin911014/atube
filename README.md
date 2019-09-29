@@ -4,7 +4,7 @@ Cloning youtube with VanillaJS and nodeJS
 
 ## 서버 구현 현황
 
-[x] 서버: nodejs 활용 , Database: mongoDB 활용
+[x] 서버: nodejs 활용 , Database: mongoDB 활용, ES6문법 적용
 
 [x] Model: Schema 활용한 간략한 MODEL 구현 - 추가 내용 구상중
 
