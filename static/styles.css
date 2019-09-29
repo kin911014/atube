@@ -209,6 +209,10 @@ button {
 button.delete {
   background-color: #bb2f2a; }
 
+button,
+input:not([type="file"]) {
+  cursor: pointer; }
+
 .header {
   background-color: #ea232c;
   margin-bottom: 50px; }
@@ -375,7 +379,7 @@ button.delete {
 
 .home-videos {
   display: grid;
-  grid-template-columns: repeat(6, minmax(200px, 1fr));
+  grid-template-columns: repeat(6, minmax(230px, 1fr));
   grid-gap: 25px; }
   .home-videos .videoBlock:first-child,
   .home-videos .videoBlock:nth-child(2) {

@@ -51,3 +51,8 @@ button {
 button.delete {
   background-color: $dark-red;
 }
+
+button,
+input:not([type="file"]) {
+  cursor: pointer;
+}
