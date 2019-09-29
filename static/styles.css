@@ -148,7 +148,7 @@ body {
 
 main {
   width: 100%;
-  max-width: 1400px;
+  max-width: 1300px;
   margin: 0 auto;
   min-height: 70vh; }
 
@@ -332,6 +332,18 @@ button.delete {
     background-color: #3a5998;
     color: white; }
 
+.videoBlock video {
+  max-width: 100%;
+  margin-bottom: 10px; }
+
+.videoBlock .videoBlock__title {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 10px; }
+
+.videoBlock .videoBlock__views {
+  font-weight: 500; }
+
 .video-detail__container {
   display: flex;
   flex-direction: column;
@@ -360,3 +372,15 @@ button.delete {
     margin-top: 25px; }
     .video-detail__container .video__comments .video__comment-number {
       font-size: 18px; }
+
+.home-videos {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(200px, 1fr));
+  grid-gap: 25px; }
+  .home-videos .videoBlock:first-child,
+  .home-videos .videoBlock:nth-child(2) {
+    grid-column: span 3; }
+  .home-videos .videoBlock:nth-child(3),
+  .home-videos .videoBlock:nth-child(4),
+  .home-videos .videoBlock:nth-child(5) {
+    grid-column: span 2; }
