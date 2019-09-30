@@ -30,9 +30,13 @@ Cloning youtube with VanillaJS and nodeJS
 
 [x] home 동영상 화면 배열 grid 작업
 
+[x] 회원가입
+
+[x] 로그인
+
 #### 해야 할 것
 
-[] 회원가입, 로그인을 Social-login 연동으로 구현 할 것
+[] 로그인을 Social-login 연동으로 구현 할 것
 
 [] 유저 인증 구현화 (현재는 id와 password를 기억못하고 그냥 로그인 됨)
 

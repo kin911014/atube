@@ -12,7 +12,7 @@ import {
 const globalRouter = express.Router();
 
 globalRouter.get(routes.join, getJoinCtr);
-globalRouter.post(routes.join, postJoinCtr);
+globalRouter.post(routes.join, postJoinCtr, postLoginCtr);
 
 globalRouter.get(routes.login, getLoginCtr);
 globalRouter.post(routes.login, postLoginCtr);
