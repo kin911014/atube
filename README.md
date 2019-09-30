@@ -20,6 +20,10 @@ Cloning youtube with VanillaJS and nodeJS
 
 [x] 검색기능 구현, 업로드된 video의 title 일부만으로도 검색가능
 
+[x] 회원가입
+
+[x] 로그인- 쿠키활용
+
 ### Front-end작업 - 작업중
 
 [x] webpack, scss활용하여 Front-end작업 실시
@@ -29,10 +33,6 @@ Cloning youtube with VanillaJS and nodeJS
 [x] font 사이즈, 버튼 작업
 
 [x] home 동영상 화면 배열 grid 작업
-
-[x] 회원가입
-
-[x] 로그인
 
 #### 해야 할 것
 
