@@ -29,6 +29,8 @@ Cloning youtube with VanillaJS and nodeJS
 
 [x] 로그인 상태유지(서버를 종료 후 다시시작해도 로그인 상태 유지)
 
+[x] 게시물 보안 설정 (middleware를 직접 제작 후 로그인/로그아웃 시 들어갈 수 있는 게시물설정)
+
 ### Front-end작업
 
 [x] webpack, scss활용하여 Front-end작업 실시
