@@ -2,7 +2,10 @@
 
 Cloning youtube with VanillaJS and nodeJS
 
-## 서버 구현 현황
+서버 실행방법 - npm run dev:server
+웹팩 실행방법 - npm run dev:assets
+
+## 서버 구현 현황 - 작업중
 
 [x] 서버: nodejs 활용 , Database: mongoDB 활용, ES6문법 적용
 
@@ -24,7 +27,9 @@ Cloning youtube with VanillaJS and nodeJS
 
 [x] 로그인- 쿠키활용
 
-### Front-end작업 - 작업중
+[x] 로그인 상태유지(서버를 종료 후 다시시작해도 로그인 상태 유지)
+
+### Front-end작업
 
 [x] webpack, scss활용하여 Front-end작업 실시
 
