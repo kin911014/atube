@@ -5,17 +5,20 @@ import GithubStrategy from "passport-github";
 그리고 import실시 */
 import User from "./models/User";
 import { githubLoginCallback } from "./controller/userController";
+import routes from "./routes";
 
 passport.use(User.createStrategy());
 // strategy는 로그인하는 방식을 의미 괄호안에 들어간다
 
 passport.use(
-  new GithubStrategy({
-    clientID: process.env.GH_ID,
-    clientSecret: process.env.GH_SECRET,
-    callbackURL: "http://localhost:4000/auth/github/callback"
-  }),
-  githubLoginCallback
+  new GithubStrategy(
+    {
+      clientID: process.env.GH_ID,
+      clientSecret: process.env.GH_SECRET,
+      callbackURL: `http://localhost:4000${routes.githubCallback}`
+    },
+    githubLoginCallback
+  )
 );
 
 passport.serializeUser(User.serializeUser());

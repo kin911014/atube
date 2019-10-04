@@ -1,24 +1,28 @@
-//global
+// global
 const HOME = "/";
 const JOIN = "/join";
 const LOGIN = "/login";
 const LOGOUT = "/logout";
 const SEARCH = "/search";
 
-//users
+// users
 
 const USERS = "/users";
 const USER_DETAIL = "/:id";
 const EDIT_PROFILE = "/edit-profile";
 const CHANGE_PASSWORD = "/change-password";
 
-//videos
+// videos
 
 const VIDEOS = "/videos";
 const UPLOAD = "/upload";
 const VIDEO_DETAIL = "/:id";
 const EDIT_VIDEO = "/:id/edit";
 const DELETE_VIDEO = "/:id/delete";
+
+// github
+const GITHUB = "/auth/github";
+const GITHUBCALLBACK = "/auth/github/callback";
 
 const routes = {
   home: HOME,
@@ -58,7 +62,9 @@ const routes = {
     } else {
       return DELETE_VIDEO;
     }
-  }
+  },
+  github: GITHUB,
+  githubCallback: GITHUBCALLBACK
 };
 
 export default routes;
