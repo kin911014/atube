@@ -12,18 +12,18 @@ import { uploadVideo, onlyPrivate } from "../middlewares";
 
 const videoRouter = express.Router();
 
-//Upload
+// Upload
 videoRouter.get(routes.upload, onlyPrivate, getUploadCtr);
 videoRouter.post(routes.upload, onlyPrivate, uploadVideo, postUploadCtr);
 
-//Video Detail
+// Video Detail
 videoRouter.get(routes.videoDetail(), videoDetailCtr);
 
-//Edit Video
+// Edit Video
 videoRouter.get(routes.editVideo(), onlyPrivate, getEditVideoCtr);
 videoRouter.post(routes.editVideo(), onlyPrivate, postEditVideoCtr);
 
-//Delete Video
+// Delete Video
 videoRouter.get(routes.deleteVideo(), onlyPrivate, deleteVideoCtr);
 
 export default videoRouter;

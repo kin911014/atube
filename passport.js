@@ -21,7 +21,7 @@ passport.use(
   )
 );
 
-passport.serializeUser(User.serializeUser());
+passport.serializeUser((user, done) => done(null, user));
 // 쿠키에는 오직 user.id만 담아서 보내라는 코드
-passport.deserializeUser(User.deserializeUser());
+passport.deserializeUser((user, done) => done(null, user));
 // 어느 사용자를 어떻게 찾는가를 담고있는 코드

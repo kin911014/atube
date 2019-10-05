@@ -23,15 +23,21 @@ Cloning youtube with VanillaJS and nodeJS
 
 [x] 검색기능 구현, 업로드된 video의 title 일부만으로도 검색가능
 
+### user 인증 관리
+
 [x] 회원가입
 
 [x] 로그인- 쿠키활용
 
 [x] 로그인 상태유지(서버를 종료 후 다시시작해도 로그인 상태 유지)
 
+[x] 로그아웃 시 홈페이지 redirect 및 login 창 뜨도록 설정
+
 [x] 게시물 보안 설정 (middleware를 직접 제작 후 로그인/로그아웃 시 들어갈 수 있는 게시물설정)
 
-### Front-end작업
+[x] github 회원가입 연동 활성화
+
+#### Front-end작업
 
 [x] webpack, scss활용하여 Front-end작업 실시
 
@@ -41,7 +47,7 @@ Cloning youtube with VanillaJS and nodeJS
 
 [x] home 동영상 화면 배열 grid 작업
 
-#### 해야 할 것
+##### 해야 할 것
 
 [] 로그인을 Social-login 연동으로 구현 할 것
 
@@ -49,7 +55,7 @@ Cloning youtube with VanillaJS and nodeJS
 
 [] 프론트엔드작업 - Video 외관 및 배치 작업, Upload파일 외관 작업, 기타 외관작업 등등
 
-##### 주의점
+###### 주의점
 
 - 현재 유저 인증 구현화 미완료로 인하여 middlewares.js파일의 user.isAuthenticated를
   true or false 로 입력 시 로그인 or 로그아웃이 가능.
