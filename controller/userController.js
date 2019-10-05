@@ -76,8 +76,18 @@ export const getMe = (req, res) => {
 };
 // req.user는 현재 로그인한 사용자
 
-export const userDetailCtr = (req, res) =>
-  res.render("userDetail", { pageTitle: "User Detail" });
+export const userDetailCtr = async (req, res) => {
+  const {
+    params: { id }
+  } = req;
+  try {
+    const user = await User.findById(id);
+
+    res.render("userDetail", { pageTitle: "User Detail", user });
+  } catch (error) {
+    res.redirect(routes.home);
+  }
+};
 
 export const editProfileCtr = (req, res) =>
   res.render("editProfile", { pageTitle: "Edit Profile" });
