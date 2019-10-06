@@ -38,6 +38,7 @@ Cloning youtube with VanillaJS and nodeJS
 [x] github 회원가입 연동 활성화 - 정보는 이름 가져옴
 
 [x] facebook 회원가입 연동 활성화 - 정보는 이름만 가져옴
+\*facebook은 https에서만 활성화가 되기때문에 localhost에서는 작동x
 
 #### Front-end작업
 
@@ -58,6 +59,3 @@ Cloning youtube with VanillaJS and nodeJS
 [] 프론트엔드작업 - Video 외관 및 배치 작업, Upload파일 외관 작업, 기타 외관작업 등등
 
 ###### 주의점
-
-- 현재 유저 인증 구현화 미완료로 인하여 middlewares.js파일의 user.isAuthenticated를
-  true or false 로 입력 시 로그인 or 로그아웃이 가능.
