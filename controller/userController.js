@@ -66,6 +66,21 @@ export const postGithubLogin = (req, res) => {
   res.redirect(routes.home);
 };
 
+export const facebookLogin = passport.authenticate("facebook");
+
+export const facebookLoginCallback = (
+  accessToken,
+  refreshToken,
+  profile,
+  cb
+) => {
+  console.log(accessToken, refreshToken, profile, cb);
+};
+
+export const postFacebookLogin = (req, res) => {
+  res.redirect(routes.home);
+};
+
 export const logoutCtr = (req, res) => {
   req.logout();
   res.redirect(routes.home);
@@ -82,7 +97,6 @@ export const userDetailCtr = async (req, res) => {
   } = req;
   try {
     const user = await User.findById(id);
-
     res.render("userDetail", { pageTitle: "User Detail", user });
   } catch (error) {
     res.redirect(routes.home);
