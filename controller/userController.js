@@ -41,11 +41,12 @@ export const postLoginCtr = passport.authenticate("local", {
 export const githubLogin = passport.authenticate("github");
 
 export const githubLoginCallback = async (_, __, profile, cb) => {
+  console.log(_, __, profile, cb);
   const {
     _json: { id, avatar_url: avatarUrl, name, email }
   } = profile;
   try {
-    const user = await User.findOne({ email });
+    const user = await User.findOne({ name });
     if (user) {
       user.githubId = id;
       user.save();
@@ -72,34 +73,29 @@ export const postGithubLogin = (req, res) => {
 
 export const instagramLogin = passport.authenticate("instagram");
 
-export const instagramLoginCallback = (
-  accessToken,
-  refreshToken,
-  profile,
-  done
-) => {
-  // const {
-  //   _json: { id, avatar_url: avatarUrl, name, email }
-  // } = profile;
-  console.log(profile);
+export const instagramLoginCallback = async (_, __, profile, done) => {
+  const {
+    _json: {
+      data: { id, profile_picture: avatarUrl, full_name: name }
+    }
+  } = profile;
+  try {
+    const user = await User.findOne({ name });
+    if (user) {
+      user.instagramId = id;
+      user.save();
+      return done(null, user);
+    }
+    const newUser = await User.create({
+      name,
+      instagramId: id,
+      avatarUrl
+    });
+    return done(null, newUser);
+  } catch (error) {
+    return done(error);
+  }
 };
-// try {
-//   const user = await User.findOne({ email });
-//   if (user) {
-//     user.githubId = id;
-//     user.save();
-//     return cb(null, user);
-//   }
-//   const newUser = await User.create({
-//     email,
-//     name,
-//     githubId: id,
-//     avatarUrl
-//   });
-//   return cb(null, newUser);
-// } catch (error) {
-//   return cb(error);
-// }
 
 export const postInstagramLogin = (req, res) => {
   res.redirect(routes.home);

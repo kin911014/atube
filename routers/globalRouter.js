@@ -42,11 +42,11 @@ globalRouter.get(
 
 globalRouter.get(routes.me, getMe);
 
-// github login part
+// instagram login part
 
 globalRouter.get(routes.instagram, instagramLogin);
 globalRouter.get(
-  routes.githubCallback,
+  routes.instagramCallback,
   passport.authenticate("instagram", { failureRedirect: "/login" }),
   postInstagramLogin
 );
