@@ -9,13 +9,16 @@ import InstagramStrategy from "passport-instagram";
 
 import User from "./models/User";
 import {
-  githubLoginCallback
+  githubLoginCallback,
+  instagramLoginCallback
   // facebookLoginCallback
 } from "./controller/userController";
 import routes from "./routes";
 
 passport.use(User.createStrategy());
 // strategy는 로그인하는 방식을 의미 괄호안에 들어간다
+
+// github login part
 
 passport.use(
   new GithubStrategy(
@@ -28,13 +31,20 @@ passport.use(
   )
 );
 
+// instagram login part
+
 passport.use(
-  new InstagramStrategy({
-    clientID: process.env.IG_ID,
-    clientSecret: process.env.IG_SECRET,
-    callbackURL: `http://localhost:4000${routes.instagramCallback}`
-  })
+  new InstagramStrategy(
+    {
+      clientID: process.env.IG_ID,
+      clientSecret: process.env.IG_SECRET,
+      callbackURL: `http://localhost:4000${routes.instagramCallback}`
+    },
+    instagramLoginCallback
+  )
 );
+
+// facebook login part
 
 /* passport.use(
   new FacebookStrategy(

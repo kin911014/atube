@@ -11,9 +11,11 @@ import {
   githubLogin,
   postGithubLogin,
   getMe,
-  facebookLogin,
-  facebookCallback,
-  postFacebookLogin
+  // facebookLogin,
+  // facebookCallback,
+  // postFacebookLogin,
+  instagramLogin,
+  postInstagramLogin
 } from "../controller/userController";
 import { onlyPublic } from "../middlewares";
 
@@ -29,6 +31,8 @@ globalRouter.get(routes.logout, logoutCtr);
 globalRouter.get(routes.home, homeCtr);
 globalRouter.get(routes.search, searchCtr);
 
+// github login part
+
 globalRouter.get(routes.github, githubLogin);
 globalRouter.get(
   routes.githubCallback,
@@ -37,6 +41,17 @@ globalRouter.get(
 );
 
 globalRouter.get(routes.me, getMe);
+
+// github login part
+
+globalRouter.get(routes.instagram, instagramLogin);
+globalRouter.get(
+  routes.githubCallback,
+  passport.authenticate("instagram", { failureRedirect: "/login" }),
+  postInstagramLogin
+);
+
+// facebook login part
 
 /* globalRouter.get(routes.facebook, facebookLogin);
 globalRouter.get(

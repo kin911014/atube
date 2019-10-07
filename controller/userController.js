@@ -36,6 +36,8 @@ export const postLoginCtr = passport.authenticate("local", {
   failureRedirect: routes.login
 });
 
+// github login part
+
 export const githubLogin = passport.authenticate("github");
 
 export const githubLoginCallback = async (_, __, profile, cb) => {
@@ -65,6 +67,45 @@ export const githubLoginCallback = async (_, __, profile, cb) => {
 export const postGithubLogin = (req, res) => {
   res.redirect(routes.home);
 };
+
+// instagram login part
+
+export const instagramLogin = passport.authenticate("instagram");
+
+export const instagramLoginCallback = (
+  accessToken,
+  refreshToken,
+  profile,
+  done
+) => {
+  // const {
+  //   _json: { id, avatar_url: avatarUrl, name, email }
+  // } = profile;
+  console.log(profile);
+};
+// try {
+//   const user = await User.findOne({ email });
+//   if (user) {
+//     user.githubId = id;
+//     user.save();
+//     return cb(null, user);
+//   }
+//   const newUser = await User.create({
+//     email,
+//     name,
+//     githubId: id,
+//     avatarUrl
+//   });
+//   return cb(null, newUser);
+// } catch (error) {
+//   return cb(error);
+// }
+
+export const postInstagramLogin = (req, res) => {
+  res.redirect(routes.home);
+};
+
+// facebook login part
 
 /* export const facebookLogin = passport.authenticate("facebook");
 
@@ -97,16 +138,6 @@ export const postFacebookLogin = (req, res) => {
 };
 */
 // facebook은 https에서만 연동가능, https로 주소 변경 후 실시.
-
-export const instagramLogin = passport.authenticate("instagram");
-
-export const instagramLoginCallback = (_, __, profile, done) => {
-  console.log(_, __, profile, done);
-};
-
-export const postInstagramLogin = (req, res) => {
-  res.redirect(routes.home);
-};
 
 export const logoutCtr = (req, res) => {
   req.logout();

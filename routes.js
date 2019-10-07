@@ -25,14 +25,14 @@ const DELETE_VIDEO = "/:id/delete";
 const GITHUB = "/auth/github";
 const GITHUB_CALLBACK = "/auth/github/callback";
 
+// instagram
+const INSTA = "/auth/instagram";
+const INSTA_CALLBACK = "/auth/instagram/callback";
+
 /* facebook
 const FB = "/auth/facebook";
 const FB_CALLBACK = "/auth/facebook/callback";
 */
-
-// instagram
-const INSTA = "auth/instagram";
-const INSTA_CALLBACK = "/auth/instagram/callback";
 
 const routes = {
   home: HOME,
