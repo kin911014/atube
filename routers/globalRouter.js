@@ -38,11 +38,13 @@ globalRouter.get(
 
 globalRouter.get(routes.me, getMe);
 
-globalRouter.get(routes.facebook, facebookLogin);
+/* globalRouter.get(routes.facebook, facebookLogin);
 globalRouter.get(
   routes.facebookCallback,
   passport.authenticate("facebook", { failureRedirect: "/login" }),
   postFacebookLogin
 );
+*/
+// facebook은 https에서만 연동가능, https로 주소 변경 후 실시.
 
 export default globalRouter;

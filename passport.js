@@ -1,13 +1,16 @@
 // 폴더 제작 후 npm i passport passport-local 설치 (passport-local은 username과 password를 쓰는 사용자인증방식을 의미)
 import passport from "passport";
 import GithubStrategy from "passport-github";
-import FacebookStrategy from "passport-facebook";
+// import FacebookStrategy from "passport-facebook";
+import InstagramStrategy from "passport-instagram";
+
 /* npm install passport-github 후 https://github.com/settings/applications/new 에서등록 
 그리고 import실시 */
+
 import User from "./models/User";
 import {
-  githubLoginCallback,
-  facebookLoginCallback
+  githubLoginCallback
+  // facebookLoginCallback
 } from "./controller/userController";
 import routes from "./routes";
 
@@ -26,6 +29,14 @@ passport.use(
 );
 
 passport.use(
+  new InstagramStrategy({
+    clientID: process.env.IG_ID,
+    clientSecret: process.env.IG_SECRET,
+    callbackURL: `http://localhost:4000${routes.instagramCallback}`
+  })
+);
+
+/* passport.use(
   new FacebookStrategy(
     {
       clientID: process.env.FB_ID,
@@ -35,6 +46,8 @@ passport.use(
     facebookLoginCallback
   )
 );
+facebook은 https에서만 연동가능, https로 주소 변경 후 실시.
+*/
 
 passport.serializeUser((user, done) => done(null, user));
 // 쿠키에는 오직 user.id만 담아서 보내라는 코드

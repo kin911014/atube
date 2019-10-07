@@ -38,7 +38,8 @@ Cloning youtube with VanillaJS and nodeJS
 [x] github 회원가입 연동 활성화 - 정보는 이름 가져옴
 
 [x] facebook 회원가입 연동 활성화 - 정보는 이름만 가져옴
-\*facebook은 https에서만 활성화가 되기때문에 localhost에서는 작동x
+\*facebook은 https에서만 활성화가 되기때문에 localhost에서는 작동x, tunnel을 사용하였으나 tunnel자체가 오류 많음,
+facebook은 https설정 후 연동 및 카카오톡 연동으로 대체
 
 #### Front-end작업
 
