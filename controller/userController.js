@@ -46,7 +46,7 @@ export const githubLoginCallback = async (_, __, profile, cb) => {
     _json: { id, avatar_url: avatarUrl, name, email }
   } = profile;
   try {
-    const user = await User.findOne({ name });
+    const user = await User.findOne({ name, email });
     if (user) {
       user.githubId = id;
       user.save();
@@ -74,13 +74,15 @@ export const postGithubLogin = (req, res) => {
 export const instagramLogin = passport.authenticate("instagram");
 
 export const instagramLoginCallback = async (_, __, profile, done) => {
+  console.log(_, __, profile, done);
+
   const {
     _json: {
-      data: { id, profile_picture: avatarUrl, full_name: name }
+      data: { id, profile_picture: avatarUrl, full_name: name, bio: email }
     }
   } = profile;
   try {
-    const user = await User.findOne({ name });
+    const user = await User.findOne({ name, email });
     if (user) {
       user.instagramId = id;
       user.save();
@@ -88,6 +90,7 @@ export const instagramLoginCallback = async (_, __, profile, done) => {
     }
     const newUser = await User.create({
       name,
+      email,
       instagramId: id,
       avatarUrl
     });
@@ -159,6 +162,24 @@ export const userDetailCtr = async (req, res) => {
 
 export const getEditProfileCtr = (req, res) =>
   res.render("editProfile", { pageTitle: "Edit Profile" });
+
+export const postEditProfileCtr = async (req, res) => {
+  const {
+    body: { name, email },
+    file
+  } = req;
+  try {
+    await User.findByIdAndUpdate(req.user.id, {
+      name,
+      email,
+      avatarUrl: file ? file.path : req.user.avatarUrl
+      // file이 있으면 file.path, 없으면 req.user.avatarUrl의 의미
+    });
+    res.redirect(routes.me);
+  } catch (error) {
+    res.render("editProfile", { pageTitle: "Edit Profile" });
+  }
+};
 
 export const changePasswordCtr = (req, res) =>
   res.render("changePassword", { pageTitle: "Change Password" });

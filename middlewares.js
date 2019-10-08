@@ -2,6 +2,8 @@ import multer from "multer";
 import routes from "./routes";
 
 const multerVideo = multer({ dest: "uploads/videos/" });
+const multerAvatar = multer({ dest: "uploads/avatars/" });
+// 위는 아마존 대체 시 제거
 
 export const localsMiddleware = (req, res, next) => {
   res.locals.siteName = "Atube";
@@ -28,3 +30,5 @@ export const onlyPrivate = (req, res, next) => {
 };
 
 export const uploadVideo = multerVideo.single("videoFile");
+export const uploadAvatar = multerAvatar.single("avatar");
+// single("pug의 해당 input 이름으로 설정")

@@ -59,7 +59,7 @@ passport.use(
 facebook은 https에서만 연동가능, https로 주소 변경 후 실시.
 */
 
-passport.serializeUser((user, done) => done(null, user));
+passport.serializeUser(User.serializeUser());
 // 쿠키에는 오직 user.id만 담아서 보내라는 코드
-passport.deserializeUser((user, done) => done(null, user));
+passport.deserializeUser(User.deserializeUser());
 // 어느 사용자를 어떻게 찾는가를 담고있는 코드
