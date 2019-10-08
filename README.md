@@ -33,7 +33,7 @@ Cloning youtube with VanillaJS and nodeJS
 
 [x] 로그아웃 시 홈페이지 redirect 및 login 창 뜨도록 설정
 
-[x] 게시물 보안 설정 (middleware를 직접 제작 후 로그인/로그아웃 시 들어갈 수 있는 게시물설정)
+[x] 게시물 보안 설정 (middleware를 직접 생성 한 후 로그인/로그아웃 시 들어갈 수 있는 게시물설정)
 
 [x] Github 회원가입 연동 활성화 - 정보는 이름,사진 가져옴
 

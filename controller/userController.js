@@ -157,7 +157,7 @@ export const userDetailCtr = async (req, res) => {
   }
 };
 
-export const editProfileCtr = (req, res) =>
+export const getEditProfileCtr = (req, res) =>
   res.render("editProfile", { pageTitle: "Edit Profile" });
 
 export const changePasswordCtr = (req, res) =>

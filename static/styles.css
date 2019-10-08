@@ -136,6 +136,11 @@ input {
   input:focus, input:active {
     outline: none; }
 
+.u-avatar {
+  height: 80px;
+  background-color: #ea232c;
+  border-radius: 50%; }
+
 html,
 body {
   height: 100%; }
@@ -391,3 +396,23 @@ input:not([type="file"]) {
   .home-videos .videoBlock:nth-child(4),
   .home-videos .videoBlock:nth-child(5) {
     grid-column: span 2; }
+
+.user-profile {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column; }
+  .user-profile .user-profile__header {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 20px; }
+    .user-profile .user-profile__header .profile__username {
+      font-size: 18px;
+      margin-top: 15px; }
+  .user-profile .user-profile__bts {
+    display: flex;
+    align-items: center;
+    flex-direction: column; }
+    .user-profile .user-profile__bts a:not(:last-child) {
+      margin-bottom: 20px; }
