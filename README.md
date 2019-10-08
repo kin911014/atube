@@ -44,6 +44,8 @@ Facebook은 https설정 후 연동 및 카카오톡 연동으로 대체
 
 [x] 연동 회원가입 후 개인정보 변경 기능 설정 - 이름, 사진, email 변경가능
 
+[x] 비밀번호 변경 기능 설정
+
 # Front-end작업
 
 [x] webpack, scss활용하여 Front-end작업 실시
