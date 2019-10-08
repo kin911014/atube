@@ -5,7 +5,7 @@ Cloning youtube with VanillaJS and nodeJS
 서버 실행방법 - npm run dev:server
 웹팩 실행방법 - npm run dev:assets
 
-## 서버 구현 현황 - 작업중
+# 서버 구현 현황 - 작업중
 
 [x] 서버: nodejs 활용 , Database: mongoDB 활용, ES6문법 적용
 
@@ -23,7 +23,7 @@ Cloning youtube with VanillaJS and nodeJS
 
 [x] 검색기능 구현, 업로드된 video의 title 일부만으로도 검색가능
 
-### user 인증 관리
+# user 인증 관리
 
 [x] 회원가입
 
@@ -42,7 +42,9 @@ Cloning youtube with VanillaJS and nodeJS
 [x] Facebook 회원가입 연동 활성화 - Facebook은 https에서만 활성화가 되기때문에 localhost에서는 작동x, tunnel을 사용하였으나 tunnel자체가 오류 많음,
 Facebook은 https설정 후 연동 및 카카오톡 연동으로 대체
 
-#### Front-end작업
+[x] 연동 회원가입 후 개인정보 변경 기능 설정 - 이름, 사진, email 변경가능
+
+# Front-end작업
 
 [x] webpack, scss활용하여 Front-end작업 실시
 
@@ -52,12 +54,6 @@ Facebook은 https설정 후 연동 및 카카오톡 연동으로 대체
 
 [x] home 동영상 화면 배열 grid 작업
 
-##### 해야 할 것
-
-[] 로그인을 Social-login 연동으로 구현 할 것
-
-[] 유저 인증 구현화 (현재는 id와 password를 기억못하고 그냥 로그인 됨)
+# 해야 할 것
 
 [] 프론트엔드작업 - Video 외관 및 배치 작업, Upload파일 외관 작업, 기타 외관작업 등등
-
-###### 주의점
