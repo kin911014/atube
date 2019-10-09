@@ -367,6 +367,8 @@ input:not([type="file"]) {
     .video-detail__container .video__info button {
       width: 120px;
       margin-bottom: 25px; }
+    .video-detail__container .video__info .video__author a {
+      color: #3498db; }
     .video-detail__container .video__info .video__title,
     .video-detail__container .video__info .video__views,
     .video-detail__container .video__info .video__description {

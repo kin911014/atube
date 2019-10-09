@@ -41,7 +41,6 @@ export const postLoginCtr = passport.authenticate("local", {
 export const githubLogin = passport.authenticate("github");
 
 export const githubLoginCallback = async (_, __, profile, cb) => {
-  console.log(_, __, profile, cb);
   const {
     _json: { id, avatar_url: avatarUrl, name, email }
   } = profile;
@@ -153,7 +152,8 @@ export const userDetailCtr = async (req, res) => {
     params: { id }
   } = req;
   try {
-    const user = await User.findById(id);
+    const user = await User.findById(id).populate("videos");
+    console.log(user);
     res.render("userDetail", { pageTitle: "User Detail", user });
   } catch (error) {
     res.redirect(routes.home);

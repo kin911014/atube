@@ -51,7 +51,7 @@ export const videoDetailCtr = async (req, res) => {
   } = req;
   try {
     const video = await Video.findById(id).populate("creator");
-    // populate는 오직 objectID 타입에만 사용가능
+    // populate는 video객체의 전부를 가져오는 것, 오직 objectID 타입에만 사용가능
     res.render("videoDetail", { pageTitle: video.title, video });
   } catch (error) {
     console.log(error);
@@ -65,7 +65,11 @@ export const getEditVideoCtr = async (req, res) => {
   } = req;
   try {
     const video = await Video.findById(id);
-    res.render("editVideo", { pageTitle: `Edit ${video.title}`, video });
+    if (video.creator !== req.user.id) {
+      throw Error();
+    } else {
+      res.render("editVideo", { pageTitle: `Edit ${video.title}`, video });
+    }
   } catch (error) {
     res.redirect(routes.home);
   }
@@ -90,7 +94,14 @@ export const deleteVideoCtr = async (req, res) => {
     params: { id }
   } = req;
   try {
-    await Video.findOneAndRemove({ _id: id });
-  } catch (error) {}
+    const video = await Video.findById(id);
+    if (video.creator !== req.user.id) {
+      throw Error();
+    } else {
+      await Video.findOneAndRemove({ _id: id });
+    }
+  } catch (error) {
+    console.log(error);
+  }
   res.redirect(routes.home);
 };
