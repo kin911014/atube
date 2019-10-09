@@ -20,6 +20,7 @@ userRouter.post(
 );
 userRouter.get(routes.changePassword, onlyPrivate, getChangePasswordCtr);
 userRouter.post(routes.changePassword, onlyPrivate, postChangePasswordCtr);
+
 userRouter.get(routes.userDetail(), userDetailCtr);
 
 export default userRouter;
