@@ -37,9 +37,11 @@ export const postUploadCtr = async (req, res) => {
   const newVideo = await Video.create({
     fileUrl: path,
     title,
-    description
+    description,
+    creator: req.user.id
   });
-  console.log(newVideo);
+  req.user.videos.push(newVideo.id);
+  req.user.save();
   res.redirect(routes.videoDetail(newVideo.id));
 };
 
@@ -48,7 +50,8 @@ export const videoDetailCtr = async (req, res) => {
     params: { id }
   } = req;
   try {
-    const video = await Video.findById(id);
+    const video = await Video.findById(id).populate("creator");
+    // populate는 오직 objectID 타입에만 사용가능
     res.render("videoDetail", { pageTitle: video.title, video });
   } catch (error) {
     console.log(error);
