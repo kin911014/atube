@@ -58,13 +58,15 @@ Facebook은 https설정 후 연동 및 카카오톡 연동으로 대체
 
 # Front-end작업
 
-[x] webpack, scss활용하여 Front-end작업 실시
+[x] Webpack, scss활용하여 Front-end작업 실시
 
-[x] home 윤곽 맞춤
+[x] Home 윤곽 맞춤
 
-[x] font 사이즈, 버튼 작업
+[x] Font 사이즈, 버튼 작업
 
-[x] home 동영상 화면 배열 grid 작업
+[x] Home 동영상 화면 배열 grid 작업
+
+[x] Video css작업- control bar 생성
 
 # 해야 할 것
 
