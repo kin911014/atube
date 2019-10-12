@@ -202,10 +202,6 @@ textarea,
     font-weight: 300;
     color: rgba(0, 0, 0, 0.5); }
 
-video {
-  max-width: 900px;
-  width: 100%; }
-
 button {
   background-color: #3498db;
   border: none;
@@ -357,12 +353,13 @@ input:not([type="file"]) {
   font-weight: 500; }
 
 .videoPlayer {
-  position: relative; }
+  position: relative;
+  width: 900px; }
   .videoPlayer:hover .videoPlayer__controls {
     opacity: 1; }
   .videoPlayer video {
-    max-width: 900px;
-    width: 100%; }
+    width: 100%;
+    max-width: 100%; }
   .videoPlayer .videoPlayer__controls {
     opacity: 0;
     transition: opacity 0.4s linear;
