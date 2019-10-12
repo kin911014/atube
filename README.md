@@ -66,7 +66,12 @@ Facebook은 https설정 후 연동 및 카카오톡 연동으로 대체
 
 [x] Home 동영상 화면 배열 grid 작업
 
-[x] Video css작업- control bar 생성, 생성된 control bar로 play,pause기능 활성화, volume 및 mute기능 활성화
+### video css작업
+
+[x] control bar 생성
+[x] 생성된 control bar로 play,pause기능 활성화
+[x] volume 및 mute기능 활성화
+[x] 동영상 totalTime 및 currnetTime 설정
 
 # 해야 할 것
 
