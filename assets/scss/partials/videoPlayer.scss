@@ -11,7 +11,7 @@
     max-width: 100%;
   }
   .videoPlayer__controls {
-    opacity: 0;
+    opacity: 1;
     transition: opacity 0.4s linear;
     color: white;
     position: relative;
@@ -25,15 +25,26 @@
     .videoPlayer__column:first-child {
       display: flex;
       align-items: center;
-      span:first-child {
+      #jsVolumeButton {
         margin-right: 10px;
       }
     }
-    .videoPlayer__column:last-child {
-      justify-self: end;
+    .videoPlayer__volume {
+      position: absolute;
+      padding: 0;
+      opacity: 1;
+      top: -60px;
+      left: -25px;
+      transform: rotate(-90deg);
+      z-index: 10;
+      width: 80px;
+      background-color: rgba(0, 0, 0, 0.5);
     }
     .videoPlayer__column:nth-child(2) {
       justify-self: center;
+    }
+    .videoPlayer__column:last-child {
+      justify-self: end;
     }
     i {
       font-size: 20px;
