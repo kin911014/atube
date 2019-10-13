@@ -92,12 +92,18 @@ function setTotalTime() {
   setInterval(getCurrentTime, 1000);
 }
 
+function handleEnded() {
+  videoPlayer.currentTime = 0;
+  playBtn.innerHTML = '<i class="fas fa-play"></i>';
+}
+
 function init() {
   playBtn.addEventListener("click", handlePlayClick);
   volumeBtn.addEventListener("click", handleVolumeClick);
   fullScreenBtn.addEventListener("click", goFullScreen);
   videoPlayer.addEventListener("loadedmetadata", setTotalTime);
   // 콘솔에 Nan(Not a number)표시가 뜰 경우 위와같이 이벤트로 설정하면 시간이 설정된다.
+  videoPlayer.addEventListener("ended", handleEnded);
 }
 
 if (videoContainer) {

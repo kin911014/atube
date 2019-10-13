@@ -69,9 +69,14 @@ Facebook은 https설정 후 연동 및 카카오톡 연동으로 대체
 ### video css작업
 
 [x] control bar 생성
+
 [x] 생성된 control bar로 play,pause기능 활성화
+
 [x] volume 및 mute기능 활성화
+
 [x] 동영상 totalTime 및 currnetTime 설정
+
+[x] 동영상 재생 시간 종료 후 00초로 복귀 및 pause버튼을 play버튼으로 변경 설정
 
 # 해야 할 것
 
