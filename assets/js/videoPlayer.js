@@ -105,6 +105,13 @@ function handleDrag(event) {
     target: { value }
   } = event;
   videoPlayer.volume = value;
+  if (value > 0.7) {
+    volumeBtn.innerHTML = '<i class="fas fa-volume-up"></i>';
+  } else if (value > 0.3) {
+    volumeBtn.innerHTML = '<i class="fas fa-volume-down"></i>';
+  } else {
+    volumeBtn.innerHTML = '<i class="fas fa-volume-off"></i>';
+  }
 }
 // 위의 함수가 volume값을 매번 업데이트해주고 있기 때문에 소리높낮이를 조절할 때마다 인식 할 수 있다
 
