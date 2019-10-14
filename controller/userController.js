@@ -73,8 +73,6 @@ export const postGithubLogin = (req, res) => {
 export const instagramLogin = passport.authenticate("instagram");
 
 export const instagramLoginCallback = async (_, __, profile, done) => {
-  console.log(_, __, profile, done);
-
   const {
     _json: {
       data: { id, profile_picture: avatarUrl, full_name: name, bio: email }

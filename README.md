@@ -29,9 +29,9 @@ Cloning youtube with VanillaJS and nodeJS
 
 [x] 회원가입
 
-[x] Github 회원가입 연동 활성화 - 이름,사진,email 정보를 가져옴
-
 [x] 로그인- 쿠키활용
+
+[x] Github 회원가입 연동 활성화 - 이름,사진,email 정보를 가져옴
 
 [x] Instagram 회원가입 연동 활성화 - 이름,사진,email 정보를 가져옴
 

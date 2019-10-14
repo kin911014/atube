@@ -1,6 +1,8 @@
 import routes from "../routes";
 import Video from "../models/Video";
 
+// HOME 콘트롤러
+
 export const homeCtr = async (req, res) => {
   try {
     const videos = await Video.find({}).sort({ _id: -1 });
@@ -10,6 +12,8 @@ export const homeCtr = async (req, res) => {
     res.render("home", { pageTitle: "Home", videos: [] });
   }
 };
+
+// SEARCH 콘트롤러
 
 export const searchCtr = async (req, res) => {
   const {
@@ -25,6 +29,8 @@ export const searchCtr = async (req, res) => {
   }
   res.render("search", { pageTitle: "Search", searchingFor, videos });
 };
+
+// UPLOAD 콘트롤러
 
 export const getUploadCtr = (req, res) =>
   res.render("upload", { pageTitle: "Upload" });
@@ -45,6 +51,8 @@ export const postUploadCtr = async (req, res) => {
   res.redirect(routes.videoDetail(newVideo.id));
 };
 
+// VIDEO DETAIL 콘트롤러
+
 export const videoDetailCtr = async (req, res) => {
   const {
     params: { id }
@@ -59,17 +67,19 @@ export const videoDetailCtr = async (req, res) => {
   }
 };
 
+// EDIT VIDEO 콘트롤러
+
 export const getEditVideoCtr = async (req, res) => {
   const {
     params: { id }
   } = req;
   try {
     const video = await Video.findById(id);
-    if (video.creator !== req.user.id) {
-      throw Error();
-    } else {
-      res.render("editVideo", { pageTitle: `Edit ${video.title}`, video });
-    }
+    // if (video.creator !== req.user.id) {
+    //   throw Error();
+    // } else {
+    res.render("editVideo", { pageTitle: `Edit ${video.title}`, video });
+    // }
   } catch (error) {
     res.redirect(routes.home);
   }
@@ -88,6 +98,8 @@ export const postEditVideoCtr = async (req, res) => {
     res.redirect(routes.home);
   }
 };
+
+// DELETE VIDEO 콘트롤러
 
 export const deleteVideoCtr = async (req, res) => {
   const {
