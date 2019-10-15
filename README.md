@@ -23,6 +23,8 @@ Cloning youtube with VanillaJS and nodeJS
 
 [x] 검색기능 구현, 업로드된 video의 title 일부만으로도 검색가능
 
+[x] View 조회수 API 구현 - 동영상 종료 시 조회수 1 증가
+
 # user 인증 관리
 
 ### 회원가입

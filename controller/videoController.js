@@ -124,7 +124,6 @@ export const postRegisterViewCtr = async (req, res) => {
   const {
     params: { id }
   } = req;
-  console.log(id);
   try {
     const video = await Video.findById(id);
     video.views += 1;
@@ -134,6 +133,7 @@ export const postRegisterViewCtr = async (req, res) => {
   } catch (error) {
     res.status(400);
     // res.status(400);은 에러를 의미
+  } finally {
     res.end();
   }
 };

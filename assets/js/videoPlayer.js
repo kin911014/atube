@@ -8,6 +8,14 @@ const totalTime = document.getElementById("totalTime");
 // html mideaElement mda에서 기능을 찾을 수 있다
 const volumeRange = document.getElementById("jsVolume");
 
+const registerView = () => {
+  const videoId = window.location.href.split("/videos/")[1];
+  fetch(`/api/${videoId}/view`, {
+    method: "POST"
+  });
+  // npm install axios 설치 후 작동
+};
+
 function handlePlayClick() {
   if (videoPlayer.paused) {
     videoPlayer.play();
@@ -96,6 +104,7 @@ function setTotalTime() {
 }
 
 function handleEnded() {
+  registerView();
   videoPlayer.currentTime = 0;
   playBtn.innerHTML = '<i class="fas fa-play"></i>';
 }
