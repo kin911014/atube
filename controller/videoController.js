@@ -117,3 +117,23 @@ export const deleteVideoCtr = async (req, res) => {
   }
   res.redirect(routes.home);
 };
+
+// Register Video View
+
+export const postRegisterViewCtr = async (req, res) => {
+  const {
+    params: { id }
+  } = req;
+  console.log(id);
+  try {
+    const video = await Video.findById(id);
+    video.views += 1;
+    video.save();
+    res.status(200);
+    // res.status(200);은 정상작동을 의미
+  } catch (error) {
+    res.status(400);
+    // res.status(400);은 에러를 의미
+    res.end();
+  }
+};
