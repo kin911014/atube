@@ -422,9 +422,25 @@ input:not([type="file"]) {
     .video-detail__container .video__info .video__description {
       font-size: 15px; }
   .video-detail__container .video__comments {
-    margin-top: 25px; }
+    margin-top: 25px;
+    text-align: center; }
     .video-detail__container .video__comments .video__comment-number {
       font-size: 18px; }
+    .video-detail__container .video__comments .add__comment {
+      margin-top: 25px;
+      width: 100%; }
+      .video-detail__container .video__comments .add__comment input {
+        width: 100%; }
+    .video-detail__container .video__comments .video__comments-list {
+      margin-top: 50px; }
+      .video-detail__container .video__comments .video__comments-list li {
+        background-color: #3498db;
+        color: white;
+        padding: 10px 30px;
+        border-radius: 20px;
+        border-bottom-left-radius: 0px; }
+        .video-detail__container .video__comments .video__comments-list li:not(:last-child) {
+          margin-bottom: 15px; }
 
 .home-videos {
   display: grid;

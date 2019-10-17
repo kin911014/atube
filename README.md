@@ -25,6 +25,8 @@ Cloning youtube with VanillaJS and nodeJS
 
 [x] View 조회수 API 구현 - 동영상 종료 시 조회수 1 증가
 
+[x] Comment 기능 구현 - 로그인 후 Comment에 글을 작성 가능
+
 # user 인증 관리
 
 ### 회원가입
