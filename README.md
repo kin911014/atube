@@ -25,7 +25,7 @@ Cloning youtube with VanillaJS and nodeJS
 
 [x] View 조회수 API 구현 - 동영상 종료 시 조회수 1 증가
 
-[x] Comment 기능 구현 - 로그인 후 Comment에 글을 작성 가능
+[x] Comment 기능 구현 - 로그인 후 Comment에 글을 작성 가능, comment 작성 시 곧바로 말풍선 구현 및 comments 숫자 변경 설정
 
 # user 인증 관리
 
