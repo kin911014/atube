@@ -1,5 +1,6 @@
 import routes from "../routes";
 import Video from "../models/Video";
+import Comment from "../models/Comment";
 
 // HOME 콘트롤러
 
@@ -58,7 +59,9 @@ export const videoDetailCtr = async (req, res) => {
     params: { id }
   } = req;
   try {
-    const video = await Video.findById(id).populate("creator");
+    const video = await Video.findById(id)
+      .populate("creator")
+      .populate("comments");
     // populate는 video객체의 전부를 가져오는 것, 오직 objectID 타입에만 사용가능
     res.render("videoDetail", { pageTitle: video.title, video });
   } catch (error) {
@@ -118,7 +121,7 @@ export const deleteVideoCtr = async (req, res) => {
   res.redirect(routes.home);
 };
 
-// Register Video View
+// Register Video View API
 
 export const postRegisterViewCtr = async (req, res) => {
   const {
@@ -133,6 +136,29 @@ export const postRegisterViewCtr = async (req, res) => {
   } catch (error) {
     res.status(400);
     // res.status(400);은 에러를 의미
+  } finally {
+    res.end();
+  }
+};
+
+// POST
+
+export const postAddComment = async (req, res) => {
+  const {
+    params: { id },
+    body: { comment },
+    user
+  } = req;
+  try {
+    const video = await Video.findById(id);
+    const newComment = await Comment.create({
+      text: comment,
+      creator: user.id
+    });
+    video.comments.push(newComment.id);
+    video.save();
+  } catch (error) {
+    res.status(400);
   } finally {
     res.end();
   }
