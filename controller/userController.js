@@ -170,8 +170,8 @@ export const postEditProfileCtr = async (req, res) => {
     await User.findByIdAndUpdate(req.user.id, {
       name,
       email,
-      avatarUrl: file ? file.path : req.user.avatarUrl
-      // file이 있으면 file.path, 없으면 req.user.avatarUrl의 의미
+      avatarUrl: file ? file.location : req.user.avatarUrl
+      // file이 있으면 file.location, 없으면 req.user.avatarUrl의 의미
     });
     res.redirect(routes.me);
   } catch (error) {

@@ -16,8 +16,13 @@ const multerVideo = multer({
     bucket: "atube/video"
   })
 });
-const multerAvatar = multer({ dest: "uploads/avatars/" });
-// 위는 아마존 대체 시 제거
+const multerAvatar = multer({
+  storage: multerS3({
+    s3,
+    acl: "public-read",
+    bucket: "atube/avater"
+  })
+});
 
 export const uploadVideo = multerVideo.single("videoFile");
 export const uploadAvatar = multerAvatar.single("avatar");
