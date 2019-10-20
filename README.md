@@ -31,6 +31,8 @@ Cloning youtube with VanillaJS and nodeJS
 
 [X] 데이터의 저장을 내 서버에서 AWS S3 로 변경
 
+[X] DB를 클라우드에 저장
+
 # user 인증 관리
 
 ### 회원가입

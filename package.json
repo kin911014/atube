@@ -8,7 +8,8 @@
     "dev:server": "nodemon --exec babel-node init.js --delay 2 --ignore '.scss' --ignore 'static'",
     "dev:assets": "cross-env WEBPACK_ENV=development webpack -w",
     "build:assets": "WEBPACK_ENV=production webpack",
-    "tunnel": "npx localtunnel --port 4000"
+    "tunnel": "npx localtunnel --port 4000",
+    "start": "PRODUCTION=true node build/init.js"
   },
   "author": "KIM DONG-EUN",
   "license": "ISC",
