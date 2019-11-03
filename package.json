@@ -12,7 +12,7 @@
     "build": "npm run build:server && npm run build:assets && cp -R src/static build && cp -R src/views build",
     "prebuild": "rm -rf build",
     "tunnel": "npx localtunnel --port 4000",
-    "start": "node build/init.js",
+    "start": "PRODUCTION=true node build/init.js",
     "prestart": "npm run build"
   },
   "author": "KIM DONG-EUN",
