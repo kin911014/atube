@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev:server": "nodemon --exec babel-node src/init.js --delay 2 --ignore '.scss' --ignore 'static'",
     "dev:assets": "cd src && cross-env WEBPACK_ENV=development webpack -w",
-    "build:assets": "cd src && cross-env WEBPACK_ENV=production webpack",
+    "build:assets": "cd src && WEBPACK_ENV=production webpack",
     "build:server": "babel src --out-dir build",
     "build": "npm run build:server && npm run build:assets && cp -R src/static build && cp -R src/views build",
     "prebuild": "rm -rf build",
