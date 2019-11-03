@@ -9,9 +9,8 @@
     "dev:assets": "cd src && cross-env WEBPACK_ENV=development webpack -w",
     "build:assets": "cd src && cross-env WEBPACK_ENV=production webpack",
     "build:server": "babel src --out-dir build",
-    "copyAll": "xcopy .\\src\\static .\\build\\static\\ /s /y && xcopy .\\src\\views .\\build\\views\\ /s /y",
-    "build": "npm run build:server && npm run build:assets && npm run copyAll",
-    "prebuild": "rd /s /q build",
+    "build": "npm run build:server && npm run build:assets && cp -R src/static build && cp -R src/views build",
+    "prebuild": "rm -rf build",
     "tunnel": "npx localtunnel --port 4000",
     "start": "node build/init.js"
   },

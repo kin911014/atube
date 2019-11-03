@@ -15,6 +15,6 @@ process.setMaxListeners(15);
 const PORT = process.env.PORT;
 
 const handleListening = () =>
-  console.log(`✅  Listening on:https://localhost:${PORT}`);
+  console.log(`✅  Listening on:http://localhost:${PORT}`);
 
 app.listen(PORT, handleListening);

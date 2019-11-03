@@ -1,0 +1,3 @@
+"copyAll": "xcopy .\\src\\static .\\build\\static\\ /s /y && xcopy .\\src\\views .\\build\\views\\ /s /y",
+    "prebuild": "rd /s /q build",
+    "start": "node build/init.js"
