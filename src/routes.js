@@ -75,8 +75,9 @@ const routes = {
   deleteVideo: id => {
     if (id) {
       return `/videos/${id}/delete`;
+    } else {
+      return DELETE_VIDEO;
     }
-    return DELETE_VIDEO;
   },
   github: GITHUB,
   githubCallback: GITHUB_CALLBACK,
