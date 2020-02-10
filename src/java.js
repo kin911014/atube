@@ -1,1 +1,8 @@
-나는 천재다
+function kim() {
+  const a = 김동은;
+  console.log(a);
+}
+
+function init() {
+  kim();
+}
